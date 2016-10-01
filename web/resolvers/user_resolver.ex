@@ -2,8 +2,15 @@ defmodule Crmmy.UserResolver do
   import Ecto.Query
 
   def all(options, _info) do
-    where = [country: options.country]
+    where = cond do
+      Map.get(options, :country) ->
+        [country: options.country]
+      true ->
+        []
+    end
+
     order = Keyword.new([{options.sort_direction, options.sort_order}])
+
     users = Ecto.Query.from(
       u in Crmmy.User,
       where: ^where,

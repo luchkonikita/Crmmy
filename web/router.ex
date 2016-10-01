@@ -19,7 +19,7 @@ defmodule Crmmy.Router do
     get "/", PageController, :index
   end
 
-  forward "/api", Absinthe.Plug, schema: Crmmy.Schema
+  forward "/graphql", Absinthe.Plug, schema: Crmmy.Schema
 
   # Other scopes may use custom stacks.
   # scope "/api", Crmmy do

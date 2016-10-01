@@ -31,11 +31,11 @@ module.exports = {
   plugins,
   resolve: {
     root: path.join(process.cwd(), 'front'),
-    extensions: ['', '.js', '.json', '.jsx']
+    extensions: ['', '.js', '.json', '.jsx', '.sass']
   },
   module: {
     preLoaders: [
-      {test: /\/app\/.*index\.jsx$/, loader: 'baggage?style.sass&shame.sass'}
+      {test: /\/front\/.*index\.jsx$/, loader: 'baggage?style.sass'}
     ],
     loaders: [
       {

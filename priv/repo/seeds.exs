@@ -10,6 +10,7 @@
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
 Crmmy.Repo.delete_all(Crmmy.User)
+Crmmy.Repo.delete_all(Crmmy.Message)
 
 Faker.start
 
